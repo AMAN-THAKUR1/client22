@@ -14,7 +14,7 @@ function Signup({ setlogged, setforce, setdisplogin }) {
     const [signupstatus, setsignupstatus] = useState("")
 
     const sendInfo = () => {
-            axios.post("http://localhost:5000/api/auth/signup", {
+            axios.post("https://server22-yn15.onrender.com/api/auth/signup", {
                 email,
                 password,
             }).then(response=>{
