@@ -5,15 +5,16 @@ import Booking from "../app/register/page";
 import Signup from "../components/Signup";
 
 function page() {
-  const [token, settoken] = useState(localStorage.getItem("token") || "");
+  const [token, settoken] = useState((typeof window !== 'undefined') && (localStorage.getItem("token") || ""));
   const [logged, setlogged] = useState(false);
   const [force, setforce] = useState(false);
   const [displogin, setdisplogin] = useState(true);
 
-  useEffect(() => {
-    
-    const storedToken = localStorage.getItem("token");
+   useEffect(() => {
 
+    if (typeof window !== 'undefined') {
+    const storedToken = localStorage.getItem("token");
+    
     if (storedToken) {
       settoken(storedToken);
       setdisplogin(false); 
@@ -22,7 +23,9 @@ function page() {
       setdisplogin(true); 
     }
 
-  }, [displogin]); 
+  }
+}, [displogin]); 
+
 
   useEffect(() => {
     setdisplogin(false);
