@@ -12,7 +12,7 @@ function Summary({ handleReset, setSuccess }) {
    
     const fetchRecentReservation = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/recent-reservation');
+        const response = await axios.get('https://server22-yn15.onrender.com/api/recent-reservation');
         setRecentReservation(response.data);
       } catch (err) {
         setError("Error fetching recent reservation.");
