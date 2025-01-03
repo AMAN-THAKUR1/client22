@@ -14,7 +14,7 @@ function Login({ setdisplogin, setforce }) {
 
   const sendInfo = () => {
     
-      axios.post("http://localhost:5000/api/auth/login", {
+      axios.post("https://server22-yn15.onrender.com/api/auth/login", {
         email,
         password,
       }).then(response =>{
