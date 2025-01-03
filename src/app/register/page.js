@@ -44,7 +44,7 @@ function page({ setdisplogin }) {
 
   const sendInfo = () => {
     const { reservationDate, numberOfPeople, name, phoneNumber, email, selectedTimeSlot } = formData;
-    axios.post("http://localhost:5000/api/reservations", {
+    axios.post("https://server22-yn15.onrender.com/api/reservations", {
       reservationDate,
       numberOfPeople,
       name,
@@ -146,7 +146,7 @@ function page({ setdisplogin }) {
       setLoading(true);
       try {
        
-        const response = await axios.get(`http://localhost:5000/api/available-time-slots?date=${selectedDate}`);
+        const response = await axios.get(`https://server22-yn15.onrender.com/api/available-time-slots?date=${selectedDate}`);
         console.log(response)
         setAvailableSlots(response.data);
         console.log(availableSlots);
